@@ -205,10 +205,10 @@
 
                 ctx.clearRect( 0, 0, $canvas.width, $canvas.height );
 
-                const cameraAngle = getScreenAngle();
-                console.log("Camera Angle: ", cameraAngle);
-                const text = cameraAngle;
-                ctx.fillText(text, $canvas.width * 0.5, $canvas.height * 0.5); // Positions the text slightly above the dot
+                // const cameraAngle = getScreenAngle();
+                // console.log("Camera Angle: ", cameraAngle);
+                // const text = cameraAngle;
+                // ctx.fillText(text, $canvas.width * 0.5, $canvas.height * 0.5); // Positions the text slightly above the dot
 
                 if( !document['hidden'] )
                 {
@@ -221,10 +221,10 @@
                     const pose = alva.findCameraPoseWithIMU( frame, imu.orientation, imu.motion );
                     Stats.stop( 'slam' );
 
-                    // const cameraAngle = getScreenAngle();
-                    // console.log("Camera Angle: ", cameraAngle);
-                    // const text = cameraAngle;
-                    // ctx.fillText(text, $canvas.width * 0.5, $canvas.height * 0.5); // Positions the text slightly above the dot
+                    const cameraAngle = getScreenAngle();
+                    console.log("Camera Angle: ", cameraAngle);
+                    const text = cameraAngle;
+                    ctx.fillText("Hiii", $canvas.width * 0.5, $canvas.height * 0.5); // Positions the text slightly above the dot
 
                     if( pose )
                     {
