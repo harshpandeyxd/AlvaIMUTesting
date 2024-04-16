@@ -148,7 +148,7 @@
     import { AlvaAR } from './assets/alva_ar.js';
     import { ARCamIMUView } from "./assets/view.js";
     import { IMU } from "./assets/imu.js";
-    import { Camera, onFrame, resize2cover } from "./assets/utils.js";
+    import { Camera, onFrame, resize2cover, getScreenAngle } from "./assets/utils.js";
 
     function main()
     {
@@ -215,6 +215,10 @@
                     Stats.start( 'slam' );
                     const pose = alva.findCameraPoseWithIMU( frame, imu.orientation, imu.motion );
                     Stats.stop( 'slam' );
+
+                    const cameraAngle = getScreenAngle();
+                    const text = '(${cameraAngle.toFixed(2)})';
+                    ctx.fillText(text, 0, 0); // Positions the text slightly above the dot
 
                     if( pose )
                     {

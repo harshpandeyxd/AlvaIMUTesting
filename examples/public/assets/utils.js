@@ -45,6 +45,22 @@ function isMobile()
     }
 }
 
+function getScreenAngle()
+{
+    let angle = -1;
+
+    if( window.screen && window.screen.orientation )
+    {
+        angle = window.screen.orientation.angle;
+    }
+    else if( 'orientation' in window )
+    {
+        angle = window.orientation;
+    }
+
+    return angle;
+}
+
 function getScreenOrientation()
 {
     let angle = -1;
@@ -342,4 +358,4 @@ class Video
     }
 }
 
-export { Camera, Video, onFrame, isMobile, isIOS, getScreenOrientation, resize2cover, rad2deg, deg2rad }
+export { Camera, Video, onFrame, isMobile, isIOS, getScreenOrientation, getScreenAngle, resize2cover, rad2deg, deg2rad }
