@@ -129,7 +129,7 @@ class ARCamIMUView
 
         this.ground.rotation.x = Math.PI / 2; // 90 deg
         //this.ground.rotation.x = 0;
-        this.ground.position.y = -20;
+        this.ground.position.y = 0;
 
         this.scene = new THREE.Scene();
         this.scene.add( new THREE.AmbientLight( 0x808080 ) );
